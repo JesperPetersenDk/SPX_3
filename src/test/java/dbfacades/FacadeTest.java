@@ -2,6 +2,7 @@ package dbfacades;
 
 import dbfacades.DemoFacade;
 import entity.Car;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -42,6 +43,31 @@ DemoFacade facade = new DemoFacade(emf);
     } finally {
       em.close();
     }
+  }
+  
+  @Test
+  public void testGetAllCars()
+  {
+      List<Car> allCars = facade.getAllCars();
+      Assert.assertEquals(2,allCars.size());
+      Assert.assertEquals("Volue", allCars.get(0).getMake());
+  }
+  
+  @Test
+  public void testGetCarById()
+  {
+    Car carById = facade.getCarById(2);
+    Assert.assertEquals(carById,2);
+  }
+  
+  public void testdeleteCarByID()
+  {
+      
+  }
+  
+  public void testgetCarsByMake()
+  {
+      List<Car> getMake = facade.getAllCars();
   }
 
   // Test the single method in the Facade

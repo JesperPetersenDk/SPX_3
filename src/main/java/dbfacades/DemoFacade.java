@@ -35,6 +35,22 @@ public class DemoFacade {
     }
   }
   
+  
+  
+  public Car getCarById(int id)
+  {
+      EntityManager em = emf.createEntityManager();
+      try
+      {
+          Car c = em.find(Car.class, id);
+          return c;
+      }
+      finally
+      {
+          em.clear();
+      }
+  }
+  
   public List<Car> getAllCars() {
     EntityManager em = emf.createEntityManager();
     try {
@@ -42,6 +58,7 @@ public class DemoFacade {
     } finally {
       em.close();
     }
+    //throw new UnsupportedOperationException("Hov hov hov!!!");
   }
   public long countCars() {
     EntityManager em = emf.createEntityManager();
