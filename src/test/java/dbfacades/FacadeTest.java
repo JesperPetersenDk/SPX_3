@@ -60,17 +60,17 @@ DemoFacade facade = new DemoFacade(emf);
     Assert.assertNotEquals(2, carById);
   }
   
-  @Test
-  public void testdeleteCarByID()
-  {
-      boolean value = facade.getRemoveById(2);
-      Assert.assertTrue("test",value);
-  }
-  
-  public void testgetCarsByMake()
-  {
-      List<Car> getMake = facade.getAllCars();
-  }
+//  @Test
+//  public void testdeleteCarByID()
+//  {
+//      boolean value = facade.getRemoveById(2);
+//      Assert.assertTrue(value);
+//  }
+//  
+//  public void testgetCarsByMake()
+//  {
+//      List<Car> getMake = facade.getAllCars();
+//  }
 
   // Test the single method in the Facade
   @Test
