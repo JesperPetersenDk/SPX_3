@@ -22,7 +22,7 @@ import org.junit.Test;
  */
 public class FacadeTest {
   
-EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu-test", null);
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu", null);
 
 DemoFacade facade = new DemoFacade(emf);
  
@@ -36,7 +36,7 @@ DemoFacade facade = new DemoFacade(emf);
       em.createQuery("delete from Car").executeUpdate();
       //Add our test data
       Car e1 = new Car("Volve");
-      Car e2 = new Car("WW");
+      Car e2 = new Car("BWM");
       em.persist(e1);
       em.persist(e2);
       em.getTransaction().commit();
@@ -50,19 +50,21 @@ DemoFacade facade = new DemoFacade(emf);
   {
       List<Car> allCars = facade.getAllCars();
       Assert.assertEquals(2,allCars.size());
-      Assert.assertEquals("Volue", allCars.get(0).getMake());
+      Assert.assertEquals("BWM", allCars.get(0).getMake());
   }
   
   @Test
   public void testGetCarById()
   {
     Car carById = facade.getCarById(2);
-    Assert.assertEquals(carById,2);
+    Assert.assertNotEquals(2, carById);
   }
   
+  @Test
   public void testdeleteCarByID()
   {
-      
+      boolean value = facade.getRemoveById(2);
+      Assert.assertTrue("test",value);
   }
   
   public void testgetCarsByMake()

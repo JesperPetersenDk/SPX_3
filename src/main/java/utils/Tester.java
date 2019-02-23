@@ -12,10 +12,8 @@ public class Tester {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu", null);
         DemoFacade df = new DemoFacade(emf);
         System.out.println("Building the Table(s)");
-        df.addCar(new Car("BMW"));
-        df.addCar(new Car("Romeo"));
-        df.addCar(new Car("Mini"));
-        df.addCar(new Car("Hyundai"));        
+        df.addCar(new Car("Volve"));
+        df.addCar(new Car("BWM"));        
         System.out.println("Oprettet!!");
         Persistence.generateSchema("pu", null);
     }

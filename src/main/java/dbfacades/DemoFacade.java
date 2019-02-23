@@ -43,7 +43,32 @@ public class DemoFacade {
       try
       {
           Car c = em.find(Car.class, id);
-          return c;
+          if(c != null)
+            return c;
+          else
+            return null;
+      }
+      finally
+      {
+          em.clear();
+      }
+  }
+  
+  public boolean getRemoveById(int id)
+  {
+      EntityManager em = emf.createEntityManager();
+      try
+      {
+            Car c = em.find(Car.class, id);
+            if(c != null)
+            {
+                em.remove(c);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
       }
       finally
       {
