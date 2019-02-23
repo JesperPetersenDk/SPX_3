@@ -59,16 +59,17 @@ public class DemoFacade {
       EntityManager em = emf.createEntityManager();
       try
       {
-            Car c = em.find(Car.class, id);
-            if(c != null)
-            {
+          try
+          {
+                int c = em.find(Car.class, id).getId();
                 em.remove(c);
                 return true;
-            }
-            else
-            {
-                return false;
-            }
+          }
+          catch(NullPointerException ex)
+          {
+              return false;
+          }
+            
       }
       finally
       {
