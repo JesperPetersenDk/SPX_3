@@ -31,7 +31,7 @@ EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu-test", nul
       em.createQuery("delete from Car").executeUpdate();
       //Add our test data
       Car e1 = new Car("Volve");
-      Car e2 = new Car("WW");
+      Car e2 = new Car("BMW");
       em.persist(e1);
       em.persist(e2);
       em.getTransaction().commit();
