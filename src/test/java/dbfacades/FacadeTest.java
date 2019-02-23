@@ -45,20 +45,20 @@ DemoFacade facade = new DemoFacade(emf);
     }
   }
   
-  @Test
-  public void testGetAllCars()
-  {
-      List<Car> allCars = facade.getAllCars();
-      Assert.assertEquals(2,allCars.size());
-      Assert.assertEquals("BWM", allCars.get(0).getMake());
-  }
-  
-  @Test
-  public void testGetCarById()
-  {
-    Car carById = facade.getCarById(2);
-    Assert.assertNotEquals(2, carById);
-  }
+//  @Test
+//  public void testGetAllCars()
+//  {
+//      List<Car> allCars = facade.getAllCars();
+//      Assert.assertEquals(2,allCars.size());
+//      Assert.assertEquals("Volve", allCars.get(0).getMake());
+//  }
+//  
+//  @Test
+//  public void testGetCarById()
+//  {
+//    Car carById = facade.getCarById(2);
+//    Assert.assertNotEquals(2, carById);
+//  }
   
 //  @Test
 //  public void testdeleteCarByID()
