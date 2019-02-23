@@ -50,7 +50,7 @@ DemoFacade facade = new DemoFacade(emf);
   {
       List<Car> allCars = facade.getAllCars();
       Assert.assertEquals(2,allCars.size());
-      Assert.assertEquals("BMW", allCars.get(1).getMake());
+      Assert.assertEquals("BMW", allCars.get(0).getMake());
   }
   
   @Test
