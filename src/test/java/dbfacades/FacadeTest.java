@@ -36,7 +36,7 @@ DemoFacade facade = new DemoFacade(emf);
       em.createQuery("delete from Car").executeUpdate();
       //Add our test data
       Car e1 = new Car("Volve");
-      Car e2 = new Car("BWM");
+      Car e2 = new Car("BMW");
       em.persist(e1);
       em.persist(e2);
       em.getTransaction().commit();
